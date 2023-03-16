@@ -1,1 +1,2 @@
 aws s3 sync  <from>  s3://<to>
+aws s3 cp --recursive ./data/ s3://countai-knitting-field-datastorage/data/
