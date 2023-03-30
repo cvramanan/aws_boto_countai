@@ -8,9 +8,9 @@ import sys
 
 
 #remote folder 
-remoteFolder = sys.argv[1]
-
-fileRatio = sys.argv[2]
+bucketName = sys.argv[1]
+remoteFolder = sys.argv[2]
+fileRatio = sys.argv[3]
 
 
 
@@ -18,7 +18,7 @@ fileRatio = sys.argv[2]
 client = boto3.client('s3')
 
 #set variable for bucket name
-bucket_name = 'countai-knitting-field-datastorage'
+bucket_name = bucketName
 
 saveLocation = os.getcwd()+"/downloadedFieldData/"
 
