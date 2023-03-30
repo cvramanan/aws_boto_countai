@@ -1,10 +1,16 @@
+#!/usr/bin/env python3
 import boto3
 import os
 from halo import Halo
+import sys
+
+
 
 
 #remote folder 
-remoteFolder = "scm-pailung/2023-03-28/HD/100/"
+remoteFolder = sys.argv[1]
+
+fileRatio = sys.argv[2]
 
 
 
@@ -38,10 +44,10 @@ with Halo(text='Counting files', spinner='dots',color="cyan") as spinner:
         count += 1
         if count%1000 == 0:
             spinner.text = "Counting files: "+str(count)
-    splitRatioConstant = count//5000
+    splitRatioConstant = count//fileRatio
     spinner.succeed("Total files in Remote location: "+str(count) + " Split Ratio: "+str(splitRatioConstant))
 
-splitRatioConstant = count//5000
+
 
 # exit()
 
